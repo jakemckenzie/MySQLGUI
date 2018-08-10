@@ -48,25 +48,30 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 	
 	private JScrollPane scrollPane;
 	
-	private JLabel[] txfLabelLot = new JLabel[5];
-	private JTextField[] txfFieldLot = new JTextField[5];
-	private JLabel[] txfLabelSpace = new JLabel[5];
-	private JTextField[] txfFieldSpace = new JTextField[5];
-	private JLabel[] txfLabelStaff = new JLabel[5];
-	private JTextField[] txfFieldStaff = new JTextField[5];
-	private JLabel[] txfLabelUpdate = new JLabel[5];
-	private JTextField[] txfFieldUpdate = new JTextField[5];
+	private JLabel[] txfLabelLot = new JLabel[4];
+	private JTextField[] txfFieldLot = new JTextField[4];
+	private JLabel[] txfLabelSpace = new JLabel[3];
+	private JTextField[] txfFieldSpace = new JTextField[3];
+	private JLabel[] txfLabelStaff = new JLabel[3];
+	private JTextField[] txfFieldStaff = new JTextField[3];
+	private JLabel[] txfLabelUpdate = new JLabel[3];
+	private JTextField[] txfFieldUpdate = new JTextField[3];
+	private JLabel[] txfLabelSpaceBooking = new JLabel[2];
+	private JTextField[] txfFieldSpaceBooking = new JTextField[2];
 
 	private JButton btnAddMovie;
 
 	private JButton btnStaffList, btnSpaceList, btnMakeLot,
 					btnMakeStaff,btnUpdateStaff,btnAssignSpot,btnReserveSpot,
 					btnAvailableSpaces,btnViewCoveredSpace,btnAdd,btnAddLot,
-					btnMakeSpace,btnAddSpace,btnAddStaff, btnChangeStaff;
+					btnMakeSpace,btnAddSpace,btnAddStaff, btnChangeStaff,
+					btnMakeSpaceBooking,btnAddSpaceBooking;
 
 	private JPanel 	pnlButtons, pnlContent, pnlStaffList, pnlSpaceList, pnlMakeLot,
-					pnlMakeSpace,pnlUpdateStaff,pnlChangedStaff,pnlAssignSpot,pnlReserveSpot,pnlCheckSpace
-					,pnlViewCoveredSpace,pnlAddLot,pnlAddSpace,pnlAddStaff,pnlChangeStaff;
+					pnlMakeSpace,pnlUpdateStaff,pnlChangedStaff,pnlAssignSpot,
+					pnlReserveSpot,pnlCheckSpace,pnlViewCoveredSpace,pnlAddLot,
+					pnlAddSpace,pnlAddStaff,pnlChangeStaff,pnlMakeSpaceBooking,
+					pnlAddSpaceBooking;
 	
 	/**
 	 * Creates the frame and components and launches the GUI.
@@ -283,7 +288,7 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 				data[i][2] = listAvailableSpaces.get(i).getLotName();
 			}
 			pnlContent.removeAll();
-			table = new JTable(data, columnNamesCovered);
+			table = new JTable(data, columnNamesSpace);
 			table.getModel().addTableModelListener(this);
 			scrollPane = new JScrollPane(table);
 			pnlContent.add(scrollPane);
