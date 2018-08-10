@@ -111,6 +111,34 @@ public class ParkingDB {
 		} 
 	}
     /**
+	 * Modifies a staff member's telephone and license plate number.
+	 * @param staff 
+	 * @throws Exception 
+	 */
+	public void changeStaff(Staff staff) throws Exception {
+		if (sConnection == null) {
+			createConnection();
+		}
+		Statement stmt = null;
+		String sql = "UPDATE Staff"+"\n"+
+		"SET telephoneExt = ?"+
+		", vehicleLicenseNumber= ?\n"+
+		"WHERE staffNumber = ?;";
+		
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = sConnection.prepareStatement(sql);
+			preparedStatement.setInt(1, staff.getTelephoneExt());
+			preparedStatement.setInt(2, staff.getVehicleLicenseNumber());
+			preparedStatement.setInt(3, staff.getStaffNumber());
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new Exception("Unable to update Staff: " + e.getMessage());
+		} 
+	}
+
+	/**
 	 * Adds a new staff member to the staff table.
 	 * @param staff 
 	 * @throws Exception 
