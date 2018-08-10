@@ -103,7 +103,7 @@ public class ParkingDB {
 			preparedStatement = sConnection.prepareStatement(sql);
 			preparedStatement.setInt(1, space.getSpaceNumber());
 			preparedStatement.setString(2, space.getSpaceType());
-			preparedStatement.setString(3, space.getSpaceType());
+			preparedStatement.setString(3, space.getLotName());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

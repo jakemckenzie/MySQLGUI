@@ -301,9 +301,7 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 				return;
 			}
 			JOptionPane.showMessageDialog(null, "Change Successful!");
-			for (int i=0; i<txfFieldLot.length; i++) {
-				txfFieldLot[i].setText("");
-			}
+			
 		}  else if (e.getSource() == btnUpdateStaff) {
 			pnlContent.removeAll();
 			pnlContent.add(pnlChangeStaff);
@@ -361,9 +359,6 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 				return;
 			}
 			JOptionPane.showMessageDialog(null, "Added Successfully!");
-			for (int i=0; i<txfFieldLot.length; i++) {
-				txfFieldLot[i].setText("");
-			}
 			
 		} else if (e.getSource() == btnAddLot) {
 			pnlContent.removeAll();
@@ -372,7 +367,7 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 			this.repaint();
 			
 		} else if (e.getSource() == btnMakeSpace) {
-			System.out.println(txfFieldSpace[1].getText());
+
 			Space space = new Space(Integer.parseInt(txfFieldSpace[0].getText()), txfFieldSpace[1].getText(), 
 							txfFieldSpace[2].getText());
 			try {
@@ -383,9 +378,9 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 				return;
 			}
 			JOptionPane.showMessageDialog(null, "Added Successfully!");
-			for (int i=0; i<txfFieldSpace.length; i++) {
-				txfFieldSpace[i].setText("");
-			}
+			// for (int i=0; i<txfFieldSpace.length; i++) {
+			// 	txfFieldSpace[i].setText("");
+			// }
 			
 		} else if (e.getSource() == btnAddSpace) {
 			pnlContent.removeAll();
@@ -406,9 +401,6 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 				return;
 			}
 			JOptionPane.showMessageDialog(null, "Added Successfully!");
-			for (int i=0; i<txfFieldStaff.length; i++) {
-				txfFieldStaff[i].setText("");
-			}
 			
 		} else if (e.getSource() == btnAddStaff) {
 			pnlContent.removeAll();
