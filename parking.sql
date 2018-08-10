@@ -120,3 +120,7 @@ WHERE spaceNumber IN (
 		SELECT spaceNum
 		FROM SpaceBooking)
 );
+
+#UPDATE Staff
+#SET telephoneExt = ?, vehicleLicenseNumber= ?
+#WHERE staffNumber = ?;
