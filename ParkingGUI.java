@@ -57,8 +57,8 @@ import javax.swing.table.TableModel;
  * 
  * At no point does the server prompt an error and all values are correctly stored onto the server.
  * 
- * Keeping what was going on in this machine in my head was quite challenging. Models on pen and
- * paper had to be constructed to keep the flow of the state machine sound.
+ * Keeping what was going on in this program in my head was quite challenging. Models on pen and
+ * paper had to be constructed to keep the flow of the action performed state machine perfect.
  * 
  * Writing something formally down is what allowed me to finish this assignment.
  * 
