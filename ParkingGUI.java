@@ -56,6 +56,17 @@ import javax.swing.table.TableModel;
  * 9) Finally Available Spaces button is pressed to show the available visitor spaces.
  * 
  * At no point does the server prompt an error and all values are correctly stored onto the server.
+ * 
+ * Keeping what was going on in this machine in my head was quite challenging. Models on pen and
+ * paper had to be constructed to keep the flow of the state machine sound.
+ * 
+ * Writing something formally down is what allowed me to finish this assignment.
+ * 
+ * I had to go back to one of my idols, Leslie Lamport's advice for "Thinking above the code."
+ * 
+ * I kept getting mired in not knowing what to do, so I abstracted out the entire task then followed
+ * by thinking about my problem. I'm not an oracle or a genius, the only way I know how to solve hard
+ * problems is to think about them.
  */
 public class ParkingGUI extends JFrame implements ActionListener, TableModelListener {
 	/**
@@ -335,6 +346,11 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 	/**
 	 * Event handling to change the panels when different tabs are clicked,
 	 * add and search buttons are clicked on the corresponding add and search panels.
+	 * 
+	 * I thought of this as a large finite state (Moore) machine. Outputs are only determined
+	 * by the inputs the users give it. I don't think this is good practice. If I had more time
+	 * I would have split up the action performed into many smaller methods.
+	 * 
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
