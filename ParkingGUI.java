@@ -470,7 +470,6 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 				db.addStaffSpace(ss);
 			}
 			catch(Exception exception) {
-				System.out.println("ERROR\n");
 				JOptionPane.showMessageDialog(this, exception.getMessage());
 				return;
 			}
