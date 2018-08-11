@@ -113,7 +113,7 @@ public class ParkingDB {
 
 	/**
 	 * Adds a new space to the space table.
-	 * @param space 
+	 * @param sb
 	 * @throws Exception 
 	 */
 	public void addSpaceBooking(SpaceBooking sb) throws Exception {
@@ -230,50 +230,11 @@ public class ParkingDB {
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new Exception("Unable to add an employee: " + e.getMessage());
+			throw new Exception("Unable to update employee information: " + e.getMessage());
 		} 
 		
 	}
-    /**
-     * method getSpaceBookings returns all records of visitor space booking
-     * requests.
-     * @return returns all records of visitor space booking
-     * requests.
-     * @throws Exception
-     */
-    //returns the SpaceBooking object
-    // public List<SpaceBooking> getSpaceBooking() throws Exception {
-	// 	if (sConnection == null) {
-	// 		createConnection();
-	// 	}
-	// 	Statement stmt = null;
-	// 	String query = "SELECT * " + "FROM SpaceBooking";
-	// 	bookingList = new ArrayList<SpaceBooking>();
-	// 	try {
-	// 		stmt = sConnection.createStatement();
-	// 		ResultSet rs = stmt.executeQuery(query);
-	// 		while (rs.next()) {
-	// 			Integer BookingId = rs.getInt("BookingId");
-	// 			Integer spaceNumber = rs.getInt("spaceNumber");
-	// 			Integer visitorLicense = rs.getInt("visitorLicense");
-	// 			String dateOfVisit = rs.getString("dateOfVisit");
-	// 			Integer staffNumber = rs.getInt("staffNumber");
-				
-	// 			SpaceBooking request = new SpaceBooking(visitorLicense, 
-	// 					dateOfVisit, spaceNumber, BookingId, staffNumber);
-	// 			bookingList.add(request);
-	// 		}
-	// 	} catch (SQLException e) {
-	// 		e.printStackTrace();
-	// 		throw new Exception("Unable to retrieve list of visitor space "
-	// 				+ "booking requests." + e.getMessage());
-	// 	} finally {
-	// 		if (stmt != null) {
-	// 			stmt.close();
-	// 		}
-	// 	}
-	// 	return bookingList;
-	// }
+    
     
     /**
 	 * Modifies the staffSpace information corresponding to the index in the list.
@@ -295,7 +256,6 @@ public class ParkingDB {
 				 if (data instanceof Integer)
 					preparedStatement.setInt(1, spaceNumber);
 					preparedStatement.setInt(2, staffNumber);
-					//preparedStatement.setInt(3, year);
 					preparedStatement.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -452,7 +412,7 @@ public class ParkingDB {
 		"	SELECT spaceNumber\n"+ 
 		"    FROM `Space`\n"+
 		"    WHERE spaceNumber\n"+
-		"    NOT IN\n"+
+		"    IN\n"+
 		"		(SELECT pSpaceNumber\n"+
 		"		FROM StaffSpace\n"+
 		"		UNION ALL\n"+
@@ -486,25 +446,4 @@ public class ParkingDB {
 		return spaceListAvailable;
 	}
 
-	/**
-	 * Filters the movie list to find the given title. Returns a list with the
-	 * movie objects that match the title provided.
-	 * @param title
-	 * @return list of movies that contain the title.
-	 */
-	// public List<CoveredSpace> getCoveredSpace(String title) throws Exception {
-	// 	List<CoveredSpace> filterList = new ArrayList<CoveredSpace>();
-	// 	try {
-	// 		list = getCoveredSpace();
-	// 	} catch (SQLException e) {
-	// 		e.printStackTrace();
-	// 		throw new Exception("Unable to retrieve covered spaces: " + e.getMessage());
-	// 	}
-	// 	for (CoveredSpace cs : list) {
-	// 		if (cs.getSpaceNumber().toLowerCase().contains(title.toLowerCase())) {
-	// 			filterList.add(cs);
-	// 		}
-	// 	}
-	// 	return filterList;
-	// }
 }

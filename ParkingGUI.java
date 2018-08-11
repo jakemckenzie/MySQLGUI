@@ -10,16 +10,52 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
 /**
- * A user interface to view the movies, add a new movie and to update an existing movie.
- * The list is a table with all the movie information in it. The TableModelListener listens to
- * any changes to the cells to modify the values for reach movie.
+ * @author The was a joint project between Jake McKenzie and Matthew Skipworth
+ * @version 6 August 2018
+ * 
+ * In this application we allow for many different user inputs to interface with a MySQL
+ * server. The front end and back end was developed by Jake while Matt took care of a few
+ * of the SQL queries. This is the first application of this kind that I've created (Jake).
+ * If more time were alloted Swing would have been replaced with JavaFX but I opted for what
+ * was possible under the time constraints.
  * 
  * This was compiled in the command line with the following commands:
  * 
  * javac -cp .:parking.jar *.java -Xlint:unchecked
  * 
- * @author Matthew Skipworth and Jake McKenzie
- * @version 6 August 2018
+ * and ran with the following command in the command line: 
+ * 
+ * java ParkingGUI
+ * 
+ * The following test case was ran to ensure the file was working correctly in this order:
+ * 
+ * 1) The sql script parking.sql was run to populate the database.
+ * 
+ * 2) The buttons for Staff List, Spaces List, and View Covered Spaces are pressed
+ * and the contents of them are compared against what I have for them from select statements
+ * run in MySQL.
+ * 
+ * 3) Then the add lot button is pressed. The following inputs are entered in this order
+ * from left ot right row wise: c, north, 23, 2. A message is sent to the user saying "add successful"
+ * 
+ * 4) Add spaces button is pressed and the following inputs are tried from left to right row wise:
+ * 353, uncovered, a. A message is sent to the user saying "add successful".
+ * 
+ * 5) Add staff button is pressed and the following inputs are tried from left to right row wise:
+ * 3,3,3. A message is sent to the user saying "add successful".
+ * 
+ * 6) Update staff button is pressed. The following input from left to right row wise is tried: 1, 2, 3.
+ * A message is sent to the user saying "change successful".
+ * 
+ * 7) assign staff spot button is pressed. The following input from left to right row wise is tried: 
+ * 3, 690 A message is sent to the user saying "change successful".
+ * 
+ * 8) Assign Staff Spot button is pressed. The following input from left to right row wise is tried: 
+ * 1, 689, 3, 1, 1. A message is sent to the user saying "change successful".
+ * 
+ * 9) Finally Available Spaces button is pressed to show the available visitor spaces.
+ * 
+ * At no point does the server prompt an error and all values are correctly stored onto the server.
  */
 public class ParkingGUI extends JFrame implements ActionListener, TableModelListener {
 	/**
@@ -78,7 +114,7 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 	 * Creates the frame and components and launches the GUI.
 	 */
 	public ParkingGUI() {
-		super("Staff List");
+		super("Parking SQL Relational Database with a GUI");
 		db = new ParkingDB();
 		try {
 			listStaff = db.getStaff();
@@ -110,7 +146,7 @@ public class ParkingGUI extends JFrame implements ActionListener, TableModelList
 		btnStaffList = new JButton("Staff List");
 		btnStaffList.addActionListener(this);
 		
-		btnViewCoveredSpace = new JButton("View Covered Space");
+		btnViewCoveredSpace = new JButton("View Covered Spaces");
 		btnViewCoveredSpace.addActionListener(this);
 		
 		btnSpaceList = new JButton("Spaces List");
