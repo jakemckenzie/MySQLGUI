@@ -1,18 +1,22 @@
 #Jake Mckenzie and Matthew Skipworth
 #Implementation Homework
 #August 10 2018
+#
+#1) this was run with all at once. No errors were produced. 
+#Drop tables were commented out for the users ease of use.
+#
+#2)I was told me to not worry about limiting the visitors 
+#to 20 space limit so I did not take care of section g.
 
-#You told me to not worry about the 20 visitor limit so I did not take care of section g.
-
-SET FOREIGN_KEY_CHECKS = 0;    
-DROP TABLE Lot;
-Drop TABLE `Space`;
-Drop TABLE Staff;
-DROP TABLE CoveredSpace;
-Drop TABLE UncoveredSpace;
-Drop TABLE StaffSpace;
-Drop TABLE SpaceBooking;
-SET FOREIGN_KEY_CHECKS = 1;
+#SET FOREIGN_KEY_CHECKS = 0;    
+#DROP TABLE Lot;
+#Drop TABLE `Space`;
+#Drop TABLE Staff;
+#DROP TABLE CoveredSpace;
+#Drop TABLE UncoveredSpace;
+#Drop TABLE StaffSpace;
+#Drop TABLE SpaceBooking;
+#SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE Lot(
 	lotName VARCHAR(20),
