@@ -1,6 +1,6 @@
 /**
  * 
- * @author Matthew Skipworth and Jake McKenzie
+ * @author Jake McKenzie and Matthew Skipworth 
  * @version 6 August 2018
  */
 public class Staff {

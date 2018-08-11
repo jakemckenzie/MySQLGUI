@@ -12,7 +12,7 @@ import javax.swing.table.TableModel;
 /**
  * @author The was a joint project between Jake McKenzie and Matthew Skipworth
  * @version 6 August 2018
- * 
+ * 687,688
  * In this application we allow for many different user inputs to interface with a MySQL
  * server. The front end and back end was developed by Jake while Matt took care of a few
  * of the SQL queries. This is the first application of this kind that I've created (Jake).
@@ -64,9 +64,9 @@ import javax.swing.table.TableModel;
  * 
  * I had to go back to one of my idols, Leslie Lamport's advice for "Thinking above the code."
  * 
- * I kept getting mired in not knowing what to do, so I abstracted out the entire task then followed
- * by thinking about my problem. I'm not an oracle or a genius, the only way I know how to solve hard
- * problems is to think about them.
+ * I kept getting mired in not knowing what to do because I have never done anything quite like this
+ * before so I abstracted out the entire task then followed by thinking above my problem. I'm not an 
+ * oracle or a genius, the only way I know how to solve hard problems is to think about them.
  */
 public class ParkingGUI extends JFrame implements ActionListener, TableModelListener {
 	/**

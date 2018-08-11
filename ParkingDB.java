@@ -412,13 +412,13 @@ public class ParkingDB {
 		"	SELECT spaceNumber\n"+ 
 		"    FROM `Space`\n"+
 		"    WHERE spaceNumber\n"+
-		"    IN\n"+
+		"    NOT IN\n"+
 		"		(SELECT pSpaceNumber\n"+
 		"		FROM StaffSpace\n"+
 		"		UNION ALL\n"+
 		"		SELECT spaceNum\n"+
 		"		FROM SpaceBooking)\n"+
-		");\n";
+		") AND spaceType = 'covered';\n";
 
 		
 		

@@ -8,15 +8,15 @@
 #2)I was told me to not worry about limiting the visitors 
 #to 20 space limit so I did not take care of section g.
 
-#SET FOREIGN_KEY_CHECKS = 0;    
-#DROP TABLE Lot;
-#Drop TABLE `Space`;
-#Drop TABLE Staff;
-#DROP TABLE CoveredSpace;
-#Drop TABLE UncoveredSpace;
-#Drop TABLE StaffSpace;
-#Drop TABLE SpaceBooking;
-#SET FOREIGN_KEY_CHECKS = 1;
+SET FOREIGN_KEY_CHECKS = 0;    
+DROP TABLE Lot;
+Drop TABLE `Space`;
+Drop TABLE Staff;
+DROP TABLE CoveredSpace;
+Drop TABLE UncoveredSpace;
+Drop TABLE StaffSpace;
+Drop TABLE SpaceBooking;
+SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE Lot(
 	lotName VARCHAR(20),
@@ -102,21 +102,19 @@ INSERT INTO UncoveredSpace VALUES
     (356);
     
 INSERT INTO StaffSpace VALUES
-	(1,687),
-    (2,688);
+	(1,687);
     
 INSERT INTO SpaceBooking VALUES
-	(656,687,1,3884,'tuesday'),
-    (897,688,2,232342,'funday');
+	(656,688,1,3884,'tuesday');
     
 #SELECT * FROM Staff;
 #SELECT * FROM `Space`;
-#SELECT * FROM CoveredSpace;
+SELECT * FROM CoveredSpace;
 #SELECT * FROM Lot;
 #SELECT * FROM Staff;
 #SELECT * FROM UncoveredSpace;
-#SELECT * FROM StaffSpace;
-#SELECT * FROM SpaceBooking;
+SELECT * FROM StaffSpace;
+SELECT * FROM SpaceBooking;
 
 #SELECT * 
 #FROM `Space`

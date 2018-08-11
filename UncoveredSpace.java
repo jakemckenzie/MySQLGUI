@@ -1,6 +1,6 @@
 /**
  * Represents an uncovered space with a space number.
- * @author Jake McKenzie, Matthew Skipworth
+ * @author Jake McKenzie and Matthew Skipworth
  * @version 6 August 2018
  */
 public class UncoveredSpace {
